@@ -640,7 +640,7 @@ with tab_map:
         sd4_xs = [p[0] for p in SD4_BOUNDARY]
         sd4_ys = [p[1] for p in SD4_BOUNDARY]
         ax_map.fill(sd4_xs, sd4_ys, color="#e8e4dc", alpha=1.0, zorder=0)
-        ax_map.plot(sd4_xs, sd4_ys, color="#555", linewidth=1.0, zorder=3)
+        ax_map.plot(sd4_xs, sd4_ys, color="#222", linewidth=1.5, zorder=3)
 
         if not county_polys:
             ax_map.text(0.5, 0.5, "County boundaries unavailable.\nCheck internet connection.",
