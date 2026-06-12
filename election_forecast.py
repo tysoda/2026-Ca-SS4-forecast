@@ -631,10 +631,10 @@ with tab_map:
         # Load real county boundaries (fetched and cached at runtime)
         county_polys = load_county_geojson()
 
-        cmap = plt.colormaps["RdBu"]
+        cmap = plt.colormaps["seismic"]
         fig_map, ax_map = plt.subplots(figsize=(9, 8))
         fig_map.patch.set_facecolor("#f0f0ec")
-        ax_map.set_facecolor("#3150ce")
+        ax_map.set_facecolor("#C8DFF0")
 
         # Draw SD4 district boundary as backdrop
         sd4_xs = [p[0] for p in SD4_BOUNDARY]
