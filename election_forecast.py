@@ -647,7 +647,7 @@ with tab_map:
                        transform=ax_map.transAxes, ha="center", va="center", fontsize=10, color="#666")
         else:
           texts = []
-            for cn in county_names:
+          for cn in county_names:
                 if cn not in county_polys:
                     continue
                 ring   = county_polys[cn]
