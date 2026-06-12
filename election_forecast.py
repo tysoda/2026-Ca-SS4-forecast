@@ -646,8 +646,8 @@ with tab_map:
             ax_map.text(0.5, 0.5, "County boundaries unavailable.\nCheck internet connection.",
                        transform=ax_map.transAxes, ha="center", va="center", fontsize=10, color="#666")
         else:
-          texts = []
-          for cn in county_names:
+            texts = []
+            for cn in county_names:
                 if cn not in county_polys:
                     continue
                 ring   = county_polys[cn]
@@ -657,31 +657,29 @@ with tab_map:
                 xs     = [float(p[0]) for p in ring]
                 ys     = [float(p[1]) for p in ring]
                 is_sel = (cn == selected_county)
-
                 ax_map.fill(xs, ys, color=color, alpha=0.88, zorder=1,
-                           linewidth=2.5 if is_sel else 0.6,
-                           edgecolor="#FFD700" if is_sel else "#ffffff")
+                            linewidth=2.5 if is_sel else 0.6,
+                            edgecolor="#FFD700" if is_sel else "#ffffff")
                 if is_sel:
                     ax_map.plot(xs, ys, color="#FFD700", linewidth=2.5, zorder=4)
-
-               # Label at centroid
+                # Label at centroid
                 cx, cy = COUNTY_CENTROIDS.get(cn, (np.mean(xs), np.mean(ys)))
                 val_label = f"{val*100:.1f}%"
                 texts.append(
                     ax_map.text(cx, cy, f"{cn}\n{val_label}", ha="center", va="center",
-                               fontsize=5.5, fontweight="bold", color="white", zorder=5,
-                               path_effects=[pe.withStroke(linewidth=1.8, foreground="#222")],
-                               multialignment="center")
+                                fontsize=5.5, fontweight="bold", color="white", zorder=5,
+                                path_effects=[pe.withStroke(linewidth=1.8, foreground="#222")],
+                                multialignment="center")
                 )
-              from adjustText import adjust_text
-        adjust_text(
-            texts,
-            ax=ax_map,
-            expand=(1.3, 1.5),
-            force_text=(0.5, 0.8),
-            force_static=(0.3, 0.5),
-            arrowprops=dict(arrowstyle="-", color="#444", lw=0.6),
-        )
+            from adjustText import adjust_text
+            adjust_text(
+                texts,
+                ax=ax_map,
+                expand=(1.3, 1.5),
+                force_text=(0.5, 0.8),
+                force_static=(0.3, 0.5),
+                arrowprops=dict(arrowstyle="-", color="#444", lw=0.6),
+            )
         ax_map.set_xlim(-122.0, -115.4)
         ax_map.set_ylim(35.6, 39.6)
         ax_map.set_aspect("equal")
