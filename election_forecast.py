@@ -384,7 +384,7 @@ with tab_dash:
     county_headers = "".join(f"<th>{cn[:6]}</th>" for cn in county_names)
     rows_html      = ""
     for thr in thresholds:
-        district_wp = np.mean(district_share >= WIN_THRESHOLD)
+        district_wp = np.mean(district_share >= thr)
         row = f'<tr><td>&gt;{fmt_pct(thr, 0)}</td><td class="{prob_class(district_wp)}">{fmt_pct(district_wp)}</td>'
         for cn in county_names:
             cwp = np.mean(county_shares[cn] >= thr)
