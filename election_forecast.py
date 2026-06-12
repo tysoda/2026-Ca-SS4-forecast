@@ -729,7 +729,7 @@ with tab_map:
             st.markdown(f"""
             <table class="styled-table" style="font-size:0.78rem;">
               <tbody>
-                <tr><td><b>Registration</b></td><td>{data['registration']:,}</td></tr>
+                <tr><td><b>Predicted Registration</b></td><td>{data['registration']:,}</td></tr>
                 <tr><td><b>Forecast turnout</b></td><td>{fmt_pct(data['turnout'])}</td></tr>
                 <tr><td><b>Turnout adjustment</b></td><td>{'+' if adj_t >= 0 else ''}{fmt_pct(adj_t)}</td></tr>
                 <tr><td colspan="2" style="padding-top:0.6rem;font-weight:600;color:#1a6b3c">Simulated Vote Share</td></tr>
@@ -836,7 +836,7 @@ with tab_hood:
         width="stretch", hide_index=True, disabled=["County"],
         column_config={
             "County":       st.column_config.TextColumn("County", width="medium"),
-            "Registration": st.column_config.NumberColumn("Registration", min_value=0, step=1, format="%d"),
+            "Registration": st.column_config.NumberColumn("Predicted Registration", min_value=0, step=1, format="%d"),
             "Turnout (%)":  st.column_config.NumberColumn("Turnout (%)",  min_value=0.0, max_value=100.0, step=0.01, format="%.2f"),
             "Lean Avg (%)": st.column_config.NumberColumn("Lean Avg (%)", min_value=-100.0, max_value=100.0, step=0.01, format="%.2f"),
             "Lean Lin (%)": st.column_config.NumberColumn("Lean Lin (%)", min_value=-100.0, max_value=100.0, step=0.01, format="%.2f"),
