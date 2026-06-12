@@ -392,7 +392,7 @@ with tab_dash:
         rows_html += row + '</tr>'
     st.markdown(f"""
     <table class="styled-table">
-      <thead><tr><th>Threshold</th><th>District (50%)</th>{county_headers}</tr></thead>
+      <thead><tr><th>Threshold</th><th>District</th>{county_headers}</tr></thead>
       <tbody>{rows_html}</tbody>
     </table>
     <p style="font-size:0.72rem;color:#999;margin-top:0.4rem">
