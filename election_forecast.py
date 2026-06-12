@@ -634,7 +634,7 @@ with tab_map:
         cmap = plt.colormaps["RdBu"]
         fig_map, ax_map = plt.subplots(figsize=(9, 8))
         fig_map.patch.set_facecolor("#f0f0ec")
-        ax_map.set_facecolor("#c8dff0")
+        ax_map.set_facecolor("#3150ce")
 
         # Draw SD4 district boundary as backdrop
         sd4_xs = [p[0] for p in SD4_BOUNDARY]
