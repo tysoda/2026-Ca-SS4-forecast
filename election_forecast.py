@@ -631,7 +631,7 @@ with tab_map:
         # Load real county boundaries (fetched and cached at runtime)
         county_polys = load_county_geojson()
 
-        cmap = plt.colormaps["seismic"]
+        cmap = plt.colormaps["bwr"]
         fig_map, ax_map = plt.subplots(figsize=(9, 8))
         fig_map.patch.set_facecolor("#f0f0ec")
         ax_map.set_facecolor("#C8DFF0")
