@@ -379,7 +379,7 @@ with tab_dash:
     plt.tight_layout(); st.pyplot(fig, width="stretch"); plt.close()
 
     st.markdown("<br>", unsafe_allow_html=True)
-    st.markdown('<div class="section-label">County Win Probability by Vote Threshold · All Simulations</div>', unsafe_allow_html=True)
+    st.markdown('<div class="section-label">County Probability of Reaching Threshold · All Simulations</div>', unsafe_allow_html=True)
     thresholds     = [0.40, 0.45, 0.50]
     county_headers = "".join(f"<th>{cn[:6]}</th>" for cn in county_names)
     rows_html      = ""
@@ -613,8 +613,8 @@ with tab_map:
         metric_options = {
             "Mean Dem Vote Share":    lambda cn: float(np.mean(county_shares[cn])),
             "Win Probability (>50%)": lambda cn: float(np.mean(county_shares[cn] >= WIN_THRESHOLD)),
-            "Win Probability (>45%)": lambda cn: float(np.mean(county_shares[cn] >= 0.45)),
-            "Win Probability (>40%)": lambda cn: float(np.mean(county_shares[cn] >= 0.40)),
+            "Vote Share (>45%)": lambda cn: float(np.mean(county_shares[cn] >= 0.45)),
+            "Vote Share (>40%)": lambda cn: float(np.mean(county_shares[cn] >= 0.40)),
             "Median Dem Vote Share":  lambda cn: float(np.median(county_shares[cn])),
             "Std Deviation":          lambda cn: float(np.std(county_shares[cn])),
             "Historical Average":     lambda cn: COUNTIES[cn]["hist_avg"],
